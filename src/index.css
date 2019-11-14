@@ -1,13 +1,123 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    box-sizing: border-box;
+    transition-duration: 200ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    font-size: 16px;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+    padding: 1rem;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+}
+
+@media all and (max-width: 640px) {
+    .wrapper {
+        flex-direction: column;
+    }
+}
+
+.Column {
+    padding: 1.5rem 1rem;
+    margin: 1rem;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 4px;
+}
+
+@media all and (max-width: 640px) {
+  .Column {
+    margin: 0 0 1rem 0;
+  }
+}
+
+.Column:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.groupName {
+    margin: 0;
+    text-decoration: underline;
+}
+
+@media all and (max-width: 640px) {
+  .groupName {
+    text-align: center;
+  }
+}
+
+.taskWrapper {
+    font-weight: normal;
+    display: flex;
+    /*text-align: center;*/
+    margin: 0.5rem 0;
+    font-size: small;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 3px solid transparent;
+}
+
+@media all and (max-width: 640px) {
+    .taskWrapper {
+        flex-direction: column;
+        border: 1px solid black;
+    }
+}
+
+.taskWrapper > * {
+    padding: 0.25rem;
+}
+
+.taskWrapper:first-of-type {
+    margin-top: 1rem;
+}
+
+.taskWrapper:nth-child(even) {
+    border-color: darkblue;
+}
+
+.taskWrapper:nth-child(odd) {
+    border-color: darkcyan;
+}
+
+.taskWrapper:hover {
+    border-color: crimson;
+}
+
+.taskWrapper:hover .taskDate {
+    color: white;
+    background-color: black;
+}
+
+.taskTitle {
+    flex: 1;
+}
+
+.taskDate {
+    white-space: nowrap;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+}
+
+@media all and (max-width: 640px) {
+    .taskDate {
+        text-decoration: underline;
+        margin-right: 0;
+    }
 }
